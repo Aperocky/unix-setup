@@ -44,3 +44,14 @@ alias fim='find . -iname'
 # alias steam='open -a "Steam"'
 # alias wechat='open -a "Electronic Wechat"'
 # alias page='open -a "Pages"'
+
+# Derrick Rose can GO UPSTAIRS!
+..(){
+    if [[ -z "$1" ]]; then
+        cd ..
+    else
+        dragic=$(( $1 - 1 ));
+        upstairs="..$(printf '/..%.0s' $(seq 1 $dragic))";
+        cd $upstairs;
+    fi
+}
