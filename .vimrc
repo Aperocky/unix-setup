@@ -15,6 +15,7 @@ set nostartofline
 set magic
 set wrap linebreak nolist
 set hlsearch
+hi Search ctermbg=blue ctermfg=grey
 
 execute pathogen#infect()
 au BufRead,BufNewFile *.ks set filetype=kerboscript
