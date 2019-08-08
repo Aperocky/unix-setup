@@ -55,3 +55,18 @@ alias fim='find . -iname'
         cd $upstairs;
     fi
 }
+
+clip(){
+    clipper=~/clipboard;
+    # This stdin only works on linux/ not macOS.
+    if read -t 0; then
+        stdin=$(cat -);
+    fi
+    if [[ -z "$1" ]] && [[ -z "$stdin" ]]; then
+        cat $clipper;
+    elif [[ -z "$1" ]]; then
+        echo "$stdin" > $clipper;
+    else
+        echo "$1" > $clipper;
+    fi
+}
