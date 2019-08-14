@@ -38,3 +38,10 @@ colorscheme onedark
 " vim macros
 let @q = 'F<vf>y$pT<i/' " encloses html tags
 let @b = 'a{}ko    '
+
+" Open nerdtree in file location
+noremap <C-o> :NERDTreeToggle %<CR>
+" Open clipboard in new tab
+noremap <C-c> :tabe ~/clipboard<CR>
+" Search for currently yanked text, nobody uses page-down anyway.
+noremap <C-f> /<C-r>"<CR>
