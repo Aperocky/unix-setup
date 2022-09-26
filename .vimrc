@@ -21,6 +21,7 @@ execute pathogen#infect()
 au BufRead,BufNewFile *.ks set filetype=kerboscript
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd FileType make setlocal noexpandtab
 
 let g:airline_theme='luna'
 set background=dark
@@ -40,21 +41,9 @@ function ToggleJs()
   end
 endfunction
 
-" pathogen packages:
-" install pathogen first (JUST READ INSTRUCTIONS)
-" git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-" git clone https://github.com/joshdick/onedark.vim.git ~/.vim/bundle/onedark.vim
-" git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-" git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-" git clone https://github.com/bling/vim-bufferline ~/.vim/bundle/vim-bufferline
-" git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
-" git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
-" git clone https://github.com/Quramy/tsuquyomi.git ~/.vim/bundle/tsuquyomi
-" git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
-
 " vim macros
 let @q = 'F<vf>y$pT<i/' " encloses html tags
-let @b = 'a{}ko    '
+let @b = 'a{}ko    ' " auto bracket
 
 " Open nerdtree in file location
 noremap <C-o> :NERDTreeToggle %<CR>

@@ -1,5 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-
 # Pretty terminal colors
 export PROMPT='%F{208}%n%f@%F{226}%~%f$ '
 export CLICOLOR=1
@@ -22,8 +20,9 @@ alias python='python3'
 alias pip='pip3'
 alias ag='grep -ri --include \*.ts --exclude-dir=node_modules'
 
-export DIARY_DIR="/Users/aperocky/workspace/data/diary"
-alias diary="/bin/zsh /Users/aperocky/workspace/personal/termlife/diaryman.sh"
+# See https://github.com/Aperocky/diaryman
+export DIARY_DIR="/Users/$USER/workspace/data/diary"
+alias diary="/bin/zsh /Users/$USER/workspace/personal/termlife/diaryman.sh"
 
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -75,6 +74,25 @@ clip(){
     else
         echo "$1" > $clipper;
     fi
+}
+
+findr(){
+    find . -iname "*$1*"
+}
+
+grepr(){
+    if [[ -z "$2" ]]; then
+        grep -ri $1 .
+    else
+        grep -ri $1 $2
+    fi
+}
+
+weather(){
+    if [[ -z "$1" ]]; then
+        curl "wttr.in/durham,NC?m"
+    fi
+    curl "wttr.in/$1?m"
 }
 
 set -o vi
