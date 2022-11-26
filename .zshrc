@@ -1,3 +1,5 @@
+unsetopt BEEP # SILENCE!
+
 # Pretty terminal colors
 export PROMPT='%F{208}%n%f@%F{226}%~%f$ '
 export CLICOLOR=1
