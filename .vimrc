@@ -25,8 +25,10 @@ autocmd FileType make setlocal noexpandtab
 
 let g:airline_theme='luna'
 set background=dark
-set termguicolors
 colorscheme onedark
+
+" next line bugs out on MacOS 13 Ventura
+" set termguicolors
 
 " Remove compiled js files from typescript project nerdtrees
 let g:js_visible = 1
